@@ -25,3 +25,251 @@ trojan://d8010195-c7dd-4073-9f22-0baef7ba0b9d@173.245.49.19:443?hiddify=1&sni=mG
 vmess://eyJ2IjogIjIiLCAicHMiOiAiQFZcdTA2ZjJyYXlTZXJ2ZXJfVklQIFx1ZDgzZFx1ZGNlMSBTcnZcdTA2ZjMgXHVkODNjXHVkZGU5XHVkODNjXHVkZGVhXHUyMTIyXHVmZTBmIFRXQ00iLCAiYWRkIjogIjE3My4yNDUuNDkuMTkiLCAicG9ydCI6IDQ0MywgImlkIjogImQ4MDEwMTk1LWM3ZGQtNDA3My05ZjIyLTBiYWVmN2JhMGI5ZCIsICJhaWQiOiAwLCAic2N5IjogImNoYWNoYTIwLXBvbHkxMzA1IiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICJtR0NTSy5kaWFtb25kZ2FsZXJ5LmlyIiwgImFscG4iOiAiaHR0cC8xLjEiLCAicGF0aCI6ICIvWDJDeTFkcVFqdFpWNnAxdU81QXZ2IiwgInRscyI6ICJ0bHMiLCAic25pIjogIm1HQ1NLLmRpYW1vbmRnYWxlcnkuaXIiLCAiZnAiOiAiY2hyb21lIiwgImZyYWdtZW50IjogIjEtMTAsMS0yLHRsc2hlbGxvIiwgInBhZHNpemUiOiAiNTAtMjAwIiwgIm11eHR5cGUiOiAiaDJtdXgiLCAibXV4bWF4YyI6IDgsICJtdXgiOiA4LCAibXV4c21heCI6IDAsICJtdXhwYWQiOiB0cnVlfQ==
 vless://d8010195-c7dd-4073-9f22-0baef7ba0b9d@173.245.49.19:443?hiddify=1&sni=mGCSK.diamondgalery.ir&type=grpc&alpn=h2&muxtype=h2mux&muxmaxc=8&mux=8&muxsmax=0&muxpad=True&fragment=1-10,1-2,tlshello&padsize=50-200&path=JfDhd3XzSE4vrlte50vDf&host=mGCSK.diamondgalery.ir&serviceName=JfDhd3XzSE4vrlte50vDf&mode=gun&encryption=none&fp=chrome&headerType=None&security=tls#%40V%DB%B2rayServer_VIP%20%F0%9F%93%A1%20Srv%DB%B3%20%F0%9F%87%A9%F0%9F%87%AA%E2%84%A2%EF%B8%8F%20TGCL
 vless://d8010195-c7dd-4073-9f22-0baef7ba0b9d@[2a01:4f8:c010:9b27::1]:443?hiddify=1&sni=tradingveiw.com&type=grpc&alpn=h2&muxtype=h2mux&muxmaxc=8&mux=8&muxsmax=0&muxpad=True&path=JfDhd3XzSE4vrlte50vDf&serviceName=JfDhd3XzSE4vrlte50vDf&mode=gun&encryption=none&fp=chrome&headerType=None&security=reality&pbk=udT-Ul96-UFQvkr5l3W3l63eH8wPMYxtyU1P_OwxlAU&sid=b6#%F0%9F%93%A1%20Reality%20%20%F0%9F%87%A9%F0%9F%87%AA%E2%84%A2%EF%B8%8F%20RGDL
+{
+  "log": {
+    "disabled": true,
+    "level": "panic"
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "Internet-dns",
+        "address": "tcp://8.8.8.8",
+        "address_resolver": "direct-dns",
+        "detour": "Internet"
+      },
+      {
+        "tag": "Best Latency-dns",
+        "address": "tcp://8.8.8.8",
+        "address_resolver": "direct-dns",
+        "detour": "Best Latency"
+      },
+      {
+        "tag": "direct-dns",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "block-dns",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "Internet",
+        "server": "Internet-dns",
+        "rewrite_ttl": 20
+      },
+      {
+        "outbound": "Best Latency",
+        "server": "Best Latency-dns",
+        "rewrite_ttl": 20
+      },
+      {
+        "outbound": "direct",
+        "server": "direct-dns",
+        "rewrite_ttl": 20
+      },
+      {
+        "outbound": "any",
+        "server": "direct-dns",
+        "rewrite_ttl": 20
+      }
+    ],
+    "disable_expire": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "tun0",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/30",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "mixed",
+      "sniff": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "0.0.0.0",
+      "listen_port": 2080,
+      "sniff": true
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "Internet",
+      "outbounds": [
+        "Best Latency",
+        "🇳🇱 𝐈𝐑𝐂𝐏",
+        "🇳🇱 𝐈𝐑𝐂𝐏 - 𝟐",
+        "🇳🇱 𝐈𝐑𝐂𝐏 - 𝐢𝐩𝐯𝟔",
+        "🇳🇱 𝐈𝐑𝐂𝐏 - 𝟐 - 𝐢𝐩𝐯𝟔"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "Best Latency",
+      "outbounds": [
+        "🇳🇱 𝐈𝐑𝐂𝐏",
+        "🇳🇱 𝐈𝐑𝐂𝐏 - 𝟐",
+        "🇳🇱 𝐈𝐑𝐂𝐏 - 𝐢𝐩𝐯𝟔",
+        "🇳🇱 𝐈𝐑𝐂𝐏 - 𝟐 - 𝐢𝐩𝐯𝟔"
+      ],
+      "url": "http://www.google.com/generate_204",
+      "interval": "10m0s",
+      "tolerance": 50,
+      "idle_timeout": "30m0s"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇳🇱 𝐈𝐑𝐂𝐏",
+      "server": "193.38.54.48",
+      "server_port": 443,
+      "obfs": {
+        "type": "salamander",
+        "password": "@ln2ray-5bdf790f-0af2-4481-a624-41b66e7e3489"
+      },
+      "password": "@ln2ray-5bdf790f-0af2-4481-a624-41b66e7e3489",
+      "tls": {
+        "enabled": true,
+        "server_name": "let-him-cook.ircp.online",
+        "alpn": "h3",
+        "min_version": "1.3",
+        "max_version": "1.3",
+        "ech": {
+          "enabled": true,
+          "pq_signature_schemes_enabled": true,
+          "config": [
+            "-----BEGIN ECH CONFIGS-----",
+            "AFf+DQBTAAAgACCc2kqEYGusiYc5fj1smMpQJYQLckpS1bgOaCDLvoiofgAIAAEA",
+            "AQABAAMAIFstLXBxLXNpZ25hdHVyZS1zY2hlbWVzLWVuYWJsZWRdAAA=",
+            "-----END ECH CONFIGS-----"
+          ]
+        }
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇳🇱 𝐈𝐑𝐂𝐏 - 𝟐",
+      "server": "37.221.127.169",
+      "server_port": 443,
+      "obfs": {
+        "type": "salamander",
+        "password": "@ln2ray-5bdf790f-0af2-4481-a624-41b66e7e3489-2"
+      },
+      "password": "@ln2ray-5bdf790f-0af2-4481-a624-41b66e7e3489-2",
+      "tls": {
+        "enabled": true,
+        "server_name": "let-her-cook.ircp.online",
+        "alpn": "h3",
+        "min_version": "1.3",
+        "max_version": "1.3",
+        "ech": {
+          "enabled": true,
+          "pq_signature_schemes_enabled": true,
+          "config": [
+            "-----BEGIN ECH CONFIGS-----",
+            "AFf+DQBTAAAgACDEm4x9dlkKtLblXP7y0ZjKr7g6DdP2WaOgIjI6ujcnTQAIAAEA",
+            "AQABAAMAIFstLXBxLXNpZ25hdHVyZS1zY2hlbWVzLWVuYWJsZWRdAAA=",
+            "-----END ECH CONFIGS-----"
+          ]
+        }
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇳🇱 𝐈𝐑𝐂𝐏 - 𝐢𝐩𝐯𝟔",
+      "server": "2a09:7c44:0:14::1",
+      "server_port": 443,
+      "obfs": {
+        "type": "salamander",
+        "password": "@ln2ray-5bdf790f-0af2-4481-a624-41b66e7e3489"
+      },
+      "password": "@ln2ray-5bdf790f-0af2-4481-a624-41b66e7e3489",
+      "tls": {
+        "enabled": true,
+        "server_name": "let-him-cook.ircp.online",
+        "alpn": "h3",
+        "min_version": "1.3",
+        "max_version": "1.3",
+        "ech": {
+          "enabled": true,
+          "pq_signature_schemes_enabled": true,
+          "config": [
+            "-----BEGIN ECH CONFIGS-----",
+            "AFf+DQBTAAAgACCc2kqEYGusiYc5fj1smMpQJYQLckpS1bgOaCDLvoiofgAIAAEA",
+            "AQABAAMAIFstLXBxLXNpZ25hdHVyZS1zY2hlbWVzLWVuYWJsZWRdAAA=",
+            "-----END ECH CONFIGS-----"
+          ]
+        }
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇳🇱 𝐈𝐑𝐂𝐏 - 𝟐 - 𝐢𝐩𝐯𝟔",
+      "server": "2a09:7c44:0:13::1",
+      "server_port": 443,
+      "obfs": {
+        "type": "salamander",
+        "password": "@ln2ray-5bdf790f-0af2-4481-a624-41b66e7e3489-2"
+      },
+      "password": "@ln2ray-5bdf790f-0af2-4481-a624-41b66e7e3489-2",
+      "tls": {
+        "enabled": true,
+        "server_name": "let-her-cook.ircp.online",
+        "alpn": "h3",
+        "min_version": "1.3",
+        "max_version": "1.3",
+        "ech": {
+          "enabled": true,
+          "pq_signature_schemes_enabled": true,
+          "config": [
+            "-----BEGIN ECH CONFIGS-----",
+            "AFf+DQBTAAAgACDEm4x9dlkKtLblXP7y0ZjKr7g6DdP2WaOgIjI6ujcnTQAIAAEA",
+            "AQABAAMAIFstLXBxLXNpZ25hdHVyZS1zY2hlbWVzLWVuYWJsZWRdAAA=",
+            "-----END ECH CONFIGS-----"
+          ]
+        }
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      }
+    ],
+    "final": "Internet",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db",
+      "cache_id": "ircp"
+    }
+  }
+}
